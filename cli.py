@@ -13,7 +13,7 @@ ACTION_MAPPER = {
 
 
 def main():
-    allowed_actions = ["add|edit|delete|display_one|display_all"]
+    allowed_actions = ["add|display_one|display_all"]
 
     args = sys.argv
     if len(args) == 1:
