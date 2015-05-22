@@ -14,8 +14,5 @@ def get_prompt():
         In [43]: x('name')
         Out[43]: 'test'
         """
-        print "Mocked"
         return lambda x: x
-    else:
-        print "foo"
-        return raw_input
+    return raw_input
