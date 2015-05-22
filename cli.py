@@ -12,16 +12,21 @@ ACTION_MAPPER = {
 }
 
 
+def resolve(action):
+    action = action.strip()
+    func = ACTION_MAPPER.get(action)
+    return func
+
+
 def main():
     allowed_actions = ["add|display_one|display_all"]
-
     args = sys.argv
     if len(args) == 1:
         print("python cli.py {}".format(allowed_actions))
         exit(1)
     else:
-        action = args[1].strip()
-        func = ACTION_MAPPER.get(action)
+        action = args[1]
+        func = resolve(action)
         if func:
             func()
         else:

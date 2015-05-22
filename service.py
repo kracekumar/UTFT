@@ -4,7 +4,7 @@ import gravatar
 import requests
 
 
-def fecth_gravatar_url(email):
+def fetch_gravatar_url(email):
     g = gravatar.Gravatar(email)
     return g.thumb
 

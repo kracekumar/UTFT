@@ -24,17 +24,20 @@ def recursively_validate(validator, data, names):
 
 
 def add():
+    # Read details from user
     NAMES = {'first_name': 'First Name:', 'last_name': 'Last Name:',
              'email': 'Email:', 'phone': 'Phone:'}
     user_data = ui.get_input(names=NAMES)
-    data = recursively_validate(validator=AddValidator, data=user_data, names=NAMES)
+    # User submitted the data, now validate till the fields are correct
+    data = recursively_validate(validator=AddValidator, data=user_data,
+                                names=NAMES)
     email = data.get('email')
     if email:
-        gravatar_url = service.fecth_gravatar_url(email=email)
-        content = service.fetch_gravatar_image(url=gravatar_url)
-        path = file_store.store_image(content=content)
-        data['thumbnail_path'] = path
+        # Call external service to get url
+        data['thumbnail_path'] = fetch_gravatar_and_store(email=email)
+    # Store to db
     db.add(data=data)
+    # Call ui
     ui.add()
 
 
@@ -51,3 +54,10 @@ def display_one():
                                         names=names)
     db_data = db.one(id=cleaned_data['id'])
     ui.display_one(item=db_data)
+
+
+def fetch_gravatar_and_store(email):
+    gravatar_url = service.fetch_gravatar_url(email=email)
+    content = service.fetch_gravatar_image(url=gravatar_url)
+    path = file_store.store_image(content=content)
+    return path

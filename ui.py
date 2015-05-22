@@ -3,14 +3,12 @@
 from prompt import get_prompt
 
 
-prompt = get_prompt()
-
-
 def display_block_sep():
     print '#' * 80
 
 
 def display_field(display_name):
+    prompt = get_prompt()
     return prompt(display_name).strip()
 
 
