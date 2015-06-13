@@ -13,4 +13,4 @@ def get_prompt():
         Out[43]: 'test'
         """
         return lambda x: x
-    return raw_input
+    return input
