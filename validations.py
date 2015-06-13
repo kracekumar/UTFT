@@ -2,6 +2,12 @@
 
 from collections import defaultdict
 
+import sys
+
+if sys.version_info.major == 3:
+    # There are better ways to check
+    basestring = str
+
 
 class BaseValidator(object):
     def __init__(self, data):
