@@ -29,7 +29,7 @@ def add():
     NAMES = {'first_name': 'First Name:', 'last_name': 'Last Name:',
              'email': 'Email:', 'phone': 'Phone:'}
     user_data = ui.get_input(names=NAMES)
-    # User submitted the data, now validate till the fields are correct
+    # User submitted the data, now validate the data till fields are correct
     data = recursively_validate(validator=AddValidator, data=user_data,
                                 names=NAMES)
     email = data.get('email')

@@ -36,7 +36,7 @@ def display_item(item):
 
 
 def add():
-    """Get inputs from user about new fields.
+    """Display success message
     """
     print("Record added")
 
