@@ -8,11 +8,15 @@ def display_block_sep():
 
 
 def display_field(display_name):
+    """Display the field and the value from the user.
+    """
     prompt = get_prompt()
     return prompt(display_name).strip()
 
 
 def get_input(names):
+    """For given a list of fields get the values from the user.
+    """
     return {name: display_field(display_name)
             for name, display_name in names.items()}
 

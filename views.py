@@ -25,6 +25,7 @@ def recursively_validate(validator, data, names):
 
 def add():
     # Read details from user
+    # 'key' is the internal variable name and value is the Display Name like `label`
     NAMES = {'first_name': 'First Name:', 'last_name': 'Last Name:',
              'email': 'Email:', 'phone': 'Phone:'}
     user_data = ui.get_input(names=NAMES)
