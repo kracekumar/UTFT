@@ -1,6 +1,35 @@
 # UTFT
 Writing Unit tests and Functional Testing in Python
 
+#### Setup
+
+- Make sure you have `virtualenv`. You can plain `virtualenv` or `virtualenvwrapper`.
+
+```
+➜  UTFT git:(master) ✗ mkvirtualenv UTFT
+New python executable in UTFT/bin/python
+Installing setuptools, pip...done.
+Overwriting UTFT/bin/activate with new content
+Overwriting UTFT/bin/activate.fish with new content
+Overwriting UTFT/bin/activate.csh with new content
+(UTFT)➜  UTFT git:(master) ✗ pip install -r requirements.txt
+  Using cached mock-1.0.1.tar.gz
+Collecting py==1.4.27 (from -r requirements.txt (line 2))
+  Using cached py-1.4.27-py2.py3-none-any.whl
+Collecting pyGravatar==0.0.6 (from -r requirements.txt (line 3))
+  Using cached pyGravatar-0.0.6.tar.gz
+Collecting pytest==2.7.1 (from -r requirements.txt (line 4))
+  Using cached pytest-2.7.1-py2.py3-none-any.whl
+Collecting requests==2.7.0 (from -r requirements.txt (line 5))
+  Using cached requests-2.7.0-py2.py3-none-any.whl
+Installing collected packages: mock, py, pyGravatar, pytest, requests
+  Running setup.py install for mock
+  Running setup.py install for pyGravatar
+  Successfully installed mock-1.0.1 py-1.4.27 pyGravatar-0.0.6 pytest-2.7.1 requests-2.7.0
+
+(UTFT)➜  UTFT git:(master) ✗ cat phonebook.sql| sqlite3 phonebook.db
+```
+
 #### About Me
 
 This is a command line interface for phonebook. From command line you will be
