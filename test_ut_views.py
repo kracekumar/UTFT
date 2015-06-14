@@ -53,9 +53,10 @@ class FakeResponse(object):
 
 def fake_get(url):
     if url.endswith('.py'):
-        return FakeResponse('Monty Python')
+        return mock.MagicMock(content='Monty Python',
+                              spec_set=requests.Response)
     else:
-        return FakeResponse('Normal')
+        return mock.MagicMock(content='Normal', spec_set=requests.Response)
 
 
 @mock.patch.object(gravatar, 'Gravatar', autospec=True)
@@ -76,4 +77,3 @@ def test_fetch_gravatar_and_store_with_mock_stub(mocked_requests_get,
 
         assert mocked_store_image.call_count == 1
         assert res == '/tmp/foo.jpeg'
-    
