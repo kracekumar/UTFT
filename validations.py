@@ -24,6 +24,14 @@ class BaseValidator(object):
                 name, expected_type))
 
     def validate_all(self, mapping):
+        """
+        MAPPING = {
+        'first_name': {'required': True, 'max': 255},
+        'last_name': {'required': False, 'max': 255},
+        'email': {'required': False, 'max': 255, 'is_email': True},
+        'phone': {'required': True, 'max': 15}
+        }
+        """
         for name, value in mapping.items():
             val = self.data.get(name, '')
             if value['required']:
