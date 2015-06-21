@@ -5,29 +5,17 @@ Writing Unit tests and Functional Testing in Python
 
 - Make sure you have `virtualenv`. You can plain `virtualenv` or `virtualenvwrapper`.
 
-```
-➜  UTFT git:(master) ✗ mkvirtualenv UTFT
+```shell
+$ mkvirtualenv UTFT
 New python executable in UTFT/bin/python
-Installing setuptools, pip...done.
-Overwriting UTFT/bin/activate with new content
-Overwriting UTFT/bin/activate.fish with new content
-Overwriting UTFT/bin/activate.csh with new content
-(UTFT)➜  UTFT git:(master) ✗ pip install -r requirements.txt
-  Using cached mock-1.0.1.tar.gz
-Collecting py==1.4.27 (from -r requirements.txt (line 2))
-  Using cached py-1.4.27-py2.py3-none-any.whl
-Collecting pyGravatar==0.0.6 (from -r requirements.txt (line 3))
-  Using cached pyGravatar-0.0.6.tar.gz
-Collecting pytest==2.7.1 (from -r requirements.txt (line 4))
-  Using cached pytest-2.7.1-py2.py3-none-any.whl
-Collecting requests==2.7.0 (from -r requirements.txt (line 5))
-  Using cached requests-2.7.0-py2.py3-none-any.whl
-Installing collected packages: mock, py, pyGravatar, pytest, requests
-  Running setup.py install for mock
-  Running setup.py install for pyGravatar
-  Successfully installed mock-1.0.1 py-1.4.27 pyGravatar-0.0.6 pytest-2.7.1 requests-2.7.0
-
-(UTFT)➜  UTFT git:(master) ✗ cat phonebook.sql| sqlite3 phonebook.db
+Also creating executable in UTFT/bin/python
+Installing setuptools, pip, wheel...done.
+(UTFT)$ 
+(UTFT)$ pip install -r requirements.txt 
+...
+Successfully installed mock-1.0.1 py-1.4.27 pyGravatar-0.0.6 pytest-2.7.1 requests-2.7.0
+(UTFT)$
+(UTFT)$ cat phonebook.sql| sqlite3 phonebook.db
 ```
 
 #### About Me
@@ -65,38 +53,43 @@ All tests can be found in `test` branch.
 #### Demo
 
 ```shell
-(utft)➜  UTFT git:(master) ✗ cat phonebook.sql| sqlite3 phonebook.db
-(utft)➜  UTFT git:(master) ✗ python cli.py
+(UTFT)$ cat phonebook.sql| sqlite3 phonebook.db
+(UTFT)$
+(UTFT)$ python cli.py
 python cli.py ['add|display_one|display_all']
-(utft)➜  UTFT git:(master) ✗ python cli.py add
+(UTFT)$ python cli.py add
 Phone:89
 First Name:Kracekumar
 Last Name:Ramaraju
 Email:me@kracekumar.com
 Record added
-(utft)➜  UTFT git:(master) ✗ python cli.py display_all
+(UTFT)$ 
+(UTFT)$ python cli.py display_all
 ################################################################################
 Id: 1
 First Name: Kracekumar
 Last Name: Ramaraju
 Email: me@kracekumar.com
-Thumbnail Path: /Users/krace/code/UTFT/2015-05-2322:32:30214588.jpeg
+Thumbnail Path: /Users/avi/code/UTFT/20150621095734151846.jpeg
 Phone: 89
 ################################################################################
-(utft)➜  UTFT git:(master) ✗ python cli.py display_one
+(UTFT)$ 
+(UTFT)$ python cli.py display_one
 Id:1
 ################################################################################
 Id: 1
 First Name: Kracekumar
 Last Name: Ramaraju
 Email: me@kracekumar.com
-Thumbnail Path: /Users/krace/code/UTFT/2015-05-2322:32:30214588.jpeg
+Thumbnail Path: /Users/avi/code/UTFT/20150621095734151846.jpeg
 Phone: 89
 ################################################################################
-(utft)➜  UTFT git:(master) ✗ python cli.py display_one
+(UTFT)$ 
+(UTFT)$ python cli.py display_one
 Id:2
 Record not found
-(utft)➜  UTFT git:(master) ✗ python cli.py add
+(UTFT)$ 
+(UTFT)$ python cli.py add
 Phone:
 First Name:
 Last Name:
@@ -112,23 +105,24 @@ first_name:['Value is missing']
 ################################################################################
 First Name:Haris
 Record added
-(utft)➜  UTFT git:(master) ✗ python cli.py display_all
+(UTFT)$ 
+(UTFT)$ python cli.py display_all
 ################################################################################
 Id: 1
 First Name: Kracekumar
 Last Name: Ramaraju
 Email: me@kracekumar.com
-Thumbnail Path: /Users/krace/code/UTFT/2015-05-2322:32:30214588.jpeg
+Thumbnail Path: /Users/avi/code/UTFT/20150621095734151846.jpeg
 Phone: 89
 ################################################################################
 Id: 2
 First Name: Haris
-Last Name:
-Email:
+Last Name: 
+Email: 
 Thumbnail Path: None
 Phone: 4590
 ################################################################################
-(utft)➜  UTFT git:(master) ✗
+(UTFT)$
 ```
 
 #### Concepts covered
@@ -146,4 +140,3 @@ Phone: 4590
 - How to mock expensive resources like network call, System Call.
 - Patching modules/functions/classes.
 - How to use Stubs/Fakes.
-
