@@ -36,38 +36,43 @@ All tests can be found in `test` branch.
 #### Demo
 
 ```shell
-(utft)➜  UTFT git:(master) ✗ cat phonebook.sql| sqlite3 phonebook.db
-(utft)➜  UTFT git:(master) ✗ python cli.py
+(UTFT)$ cat phonebook.sql| sqlite3 phonebook.db
+(UTFT)$
+(UTFT)$ python cli.py
 python cli.py ['add|display_one|display_all']
-(utft)➜  UTFT git:(master) ✗ python cli.py add
+(UTFT)$ python cli.py add
 Phone:89
 First Name:Kracekumar
 Last Name:Ramaraju
 Email:me@kracekumar.com
 Record added
-(utft)➜  UTFT git:(master) ✗ python cli.py display_all
+(UTFT)$ 
+(UTFT)$ python cli.py display_all
 ################################################################################
 Id: 1
 First Name: Kracekumar
 Last Name: Ramaraju
 Email: me@kracekumar.com
-Thumbnail Path: /Users/krace/code/UTFT/2015-05-2322:32:30214588.jpeg
+Thumbnail Path: /Users/avi/code/UTFT/20150621095734151846.jpeg
 Phone: 89
 ################################################################################
-(utft)➜  UTFT git:(master) ✗ python cli.py display_one
+(UTFT)$ 
+(UTFT)$ python cli.py display_one
 Id:1
 ################################################################################
 Id: 1
 First Name: Kracekumar
 Last Name: Ramaraju
 Email: me@kracekumar.com
-Thumbnail Path: /Users/krace/code/UTFT/2015-05-2322:32:30214588.jpeg
+Thumbnail Path: /Users/avi/code/UTFT/20150621095734151846.jpeg
 Phone: 89
 ################################################################################
-(utft)➜  UTFT git:(master) ✗ python cli.py display_one
+(UTFT)$ 
+(UTFT)$ python cli.py display_one
 Id:2
 Record not found
-(utft)➜  UTFT git:(master) ✗ python cli.py add
+(UTFT)$ 
+(UTFT)$ python cli.py add
 Phone:
 First Name:
 Last Name:
@@ -83,23 +88,24 @@ first_name:['Value is missing']
 ################################################################################
 First Name:Haris
 Record added
-(utft)➜  UTFT git:(master) ✗ python cli.py display_all
+(UTFT)$ 
+(UTFT)$ python cli.py display_all
 ################################################################################
 Id: 1
 First Name: Kracekumar
 Last Name: Ramaraju
 Email: me@kracekumar.com
-Thumbnail Path: /Users/krace/code/UTFT/2015-05-2322:32:30214588.jpeg
+Thumbnail Path: /Users/avi/code/UTFT/20150621095734151846.jpeg
 Phone: 89
 ################################################################################
 Id: 2
 First Name: Haris
-Last Name:
-Email:
+Last Name: 
+Email: 
 Thumbnail Path: None
 Phone: 4590
 ################################################################################
-(utft)➜  UTFT git:(master) ✗
+(UTFT)$
 ```
 
 #### Concepts covered
@@ -117,4 +123,3 @@ Phone: 4590
 - How to mock expensive resources like network call, System Call.
 - Patching modules/functions/classes.
 - How to use Stubs/Fakes.
-
